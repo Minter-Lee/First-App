@@ -16,8 +16,9 @@ module.exports = {
 	},
 	//入口文件输出配置
 	output: {
-		path: 'dist/js/page',
-		filename: '[name].js'
+		// path: 'dist/js/page',
+		// filename: '[name].js'
+		filename: './dist/bundle.js'
 	},
 	module: {
 		preloaders: [{
