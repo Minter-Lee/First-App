@@ -27,6 +27,9 @@
 		"webpack-dev-server": "",
 		"express": "^4.x",
 		"body-parser": "",
-		"supervisor": ""
+		"supervisor": "",
+		"fs-extra": "",
+		"moment": "",
+		"gm": ""
 	}
 }
