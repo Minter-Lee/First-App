@@ -4,4 +4,4 @@
 #运行
 - git clone 项目
 - 进入项目目录 运行 npm install
-- 运行npm run bulid
+- 运行npm run build
