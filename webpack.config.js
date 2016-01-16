@@ -1,24 +1,37 @@
+var path = require('path');
 var webpack = require('webpack');
 
 /**==--插件定义--Start==**/
 
 //设定公共JS提取器--自动提取公共部分JS
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+//var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 /**==--插件定义--End==**/
 
 module.exports = {
 	//插件集
-	plugins: [commonsPlugin],
+	//plugins: [commonsPlugin],
+	context: path.resolve(__dirname, 'app'),
 	//页面入口文件
 	entry: {
-		index: './app/scripts/index.js'
+		index: './scripts/index.js',
+		common: ['backbone.marionette']
 	},
 	//入口文件输出配置
 	output: {
 		// path: 'dist/js/page',
 		// filename: '[name].js'
 		filename: './dist/bundle.js'
+	},
+
+	resolve: {
+		modulesDirectories: ['./app', 'node_modules'],
+		alias: {
+			'mn': 'backbone.marionette',
+			'_': 'underscore',
+			'moxie': 'scripts/plugins/plupload/moxie',
+			'moxie-plupload': 'scripts/plugins/plupload/plupload.dev'
+		}
 	},
 	module: {
 		preloaders: [{
@@ -40,6 +53,25 @@ module.exports = {
 		}, {
 			test: /\.html$/,
 			loader: 'html-loader'	//将html转为String
+		},{
+			test: /moxie\-plupload/,
+			loader: 'imports?mOxie=moxie!exports?window.plupload'
+		}, {
+			test: /moxie/i,
+			loader: 'imports?this=>window!exports?this.mOxie'
 		}]
-	}
+	},
+	plugins: [
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'common',
+			filename: '[name].min.js',
+			minChunk: 2
+		}),
+		//全局环境下
+		new webpack.ProvidePlugin({
+			mOxie: 'moxie',
+			$: "jquery"
+		})
+
+	]
 }
