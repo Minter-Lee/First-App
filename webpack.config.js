@@ -3,7 +3,7 @@ var webpack = require('webpack');
 /**==--插件定义--Start==**/
 
 //设定公共JS提取器--自动提取公共部分JS
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('./app/scripts/common.js');
 
 /**==--插件定义--End==**/
 
@@ -18,7 +18,7 @@ module.exports = {
 	output: {
 		// path: 'dist/js/page',
 		// filename: '[name].js'
-		filename: './dist/bundle.js'
+		filename: './app/scripts/bundle.js'
 	},
 	module: {
 		preloaders: [{

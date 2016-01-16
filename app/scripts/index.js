@@ -15,9 +15,13 @@ var AppView = Backbone.View.extend({
 	}
 });
 
-function mainJs(){
+function mainJs() {
 	var appView = new AppView();
 	appView.render();
 }
-
 $(mainJs);
+
+/*
+ *	全局变量
+ */
+ WEB_URL = 'http://' + location.host + "/";
