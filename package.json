@@ -27,6 +27,12 @@
 		"url-loader": "^0.5.7",
 		"exports-loader": "^0.6.2",
 		"imports-loader": "^0.6.5",
-		"webpack-dev-server": ""
+		"webpack-dev-server": "",
+		"express": "^4.x",
+		"body-parser": "",
+		"supervisor": "",
+		"fs-extra": "",
+		"moment": "",
+		"gm": ""
 	}
 }

@@ -4,7 +4,8 @@ var webpack = require('webpack');
 /**==--插件定义--Start==**/
 
 //设定公共JS提取器--自动提取公共部分JS
-//var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+//var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('./app/scripts/common.js');
+
 
 /**==--插件定义--End==**/
 
@@ -14,14 +15,13 @@ module.exports = {
 	context: path.resolve(__dirname, 'app'),
 	//页面入口文件
 	entry: {
-		index: './scripts/index.js',
-		common: ['backbone.marionette']
+		index: './scripts/index.js'
 	},
 	//入口文件输出配置
 	output: {
 		// path: 'dist/js/page',
 		// filename: '[name].js'
-		filename: './dist/bundle.js'
+		filename: './app/scripts/bundle.js'
 	},
 
 	resolve: {
@@ -64,7 +64,7 @@ module.exports = {
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'common',
-			filename: '[name].min.js',
+			filename: './app/scripts/[name].min.js',
 			minChunk: 2
 		}),
 		//全局环境下

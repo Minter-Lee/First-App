@@ -19,6 +19,11 @@ function mainJs(){
 	});
 
 	app.start();
-}
-
+ }
 $(mainJs);
+
+/*
+ *	全局变量
+ */
+ WEB_URL = 'http://' + location.host + "/";
+

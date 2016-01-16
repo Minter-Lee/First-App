@@ -21,7 +21,7 @@ module.exports = CompositeView.extend({
 		this.collection = new Backbone.Collection();
 		//console.log(this.model.attributes);
 	},
-    onShow: function(){r
+    onShow: function(){
     	this.uploader = new plupload.Uploader({
     		browse_button: 'pickfiles',
 			url:'/' ,// 服务器端的上传页面地址
