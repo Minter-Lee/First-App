@@ -30,9 +30,6 @@
 		"webpack-dev-server": "",
 		"express": "^4.x",
 		"body-parser": "",
-		"supervisor": "",
-		"fs-extra": "",
-		"moment": "",
-		"gm": ""
+		"supervisor": ""
 	}
 }
