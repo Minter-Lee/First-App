@@ -1,11 +1,11 @@
 {
-	"name": "Test-Webpack",
-	"version": "0.0.1",
+	"name": "First-App",
+	"version": "0.1.0",
 	"description": "Hellow NodeJs Hellow Webpack",
 	"author": {
-		"name": "Minter Lee",
-		"email": "minter12345@163.com"
-	},
+	        "name": "Minter Lee",
+	        "email": "MinterLee@hotmail.com"
+	    },
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack-dev-server --inline --hot"
